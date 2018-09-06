@@ -1,3 +1,5 @@
-<p-multiSelect [options]="cities1" [(ngModel)]="selectedCities1"></p-multiSelect>
-
-<p-multiSelect [options]="cities2" [(ngModel)]="selectedCities2" optionLabel="name"></p-multiSelect>
+<mat-form-field>
+  <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
+    <mat-option *ngFor="let topping of toppingList">{{topping}}</mat-option>
+  </mat-select>
+</mat-form-field>
