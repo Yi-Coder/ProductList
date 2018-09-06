@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Specification} from '../model/Specification';
 import {FormControl} from '@angular/forms';
 
-import {MultiSelectModule} from 'primeng/multiselect';
-
-import {SelectItem} from 'primeng/api';
 
 interface City {
     name: string,

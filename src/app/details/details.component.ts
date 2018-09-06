@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from "@angular/router";
 import {FormControl} from '@angular/forms';
 
-import {MatSelectModule} from '@angular/material/select';
-
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',

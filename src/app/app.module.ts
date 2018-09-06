@@ -1,8 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -40,6 +41,16 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { PostsComponent } from './posts/posts.component';
+import { UsersComponent } from './users/users.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   exports: [
@@ -81,15 +92,8 @@ import {
     MatTooltipModule,
     MatTreeModule,
   ]
-});
+})
 export class MaterialModule {}
-
-
-import { AppComponent } from './app.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { PostsComponent } from './posts/posts.component';
-import { UsersComponent } from './users/users.component';
-import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +108,9 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
