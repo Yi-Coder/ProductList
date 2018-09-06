@@ -3,9 +3,6 @@ import {Specification} from '../model/Specification';
 import {FormControl} from '@angular/forms';
 import { MatSelectModule } from '@angular/material';
 
-//import {MultiSelectModule} from 'primeng/multiselect';
-//import {SelectItem} from 'primeng/api';
-
 @Component({
   selector: 'app-specification',
   templateUrl: './specification.component.html',
