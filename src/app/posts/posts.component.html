@@ -9,9 +9,15 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <p>"selected config: "{{selected[spec.key]}}</p>
+    <p>selected {{spec.key}} : {{selected[spec.key]}}</p>
   </li>
 </ul>
+ <!--
+ <ul>
+  <li *ngFor ="let item of generatedItems" >{{item}}</li>
+</ul>
+
+-->
 <div>
- <button mat-raised-button color="primary">Primary</button>
+ <button mat-raised-button color="primary"  (click)="ItemsList()">Submit</button>
 </div>

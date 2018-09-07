@@ -51,6 +51,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
+import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
 
 @NgModule({
   exports: [
@@ -91,7 +92,8 @@ import { DetailsComponent } from './details/details.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-  ]
+  ],
+  declarations: [DialogDemoComponent]
 })
 export class MaterialModule {}
 
