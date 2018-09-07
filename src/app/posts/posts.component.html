@@ -1,9 +1,17 @@
-<h1>Posts</h1>
-
+<h1>Configuration</h1>
 <ul>
-  <li *ngFor="let post of posts$">
-    <a routerLink="">{{ post.title }}</a>
-
-    <p>{{ post.body }}</p>
+  <li *ngFor="let spec of specification$ | keyvalue">
+    <p>{{spec.key}}</p>
+    <div>
+      <mat-form-field>
+        <mat-select placeholder= {{spec.key}} [(ngModel)]="selected[spec.key]" multiple>
+          <mat-option *ngFor="let choices of spec.value" [value]="choices">{{choices}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <p>"selected config: "{{selected[spec.key]}}</p>
   </li>
 </ul>
+<div>
+ <button mat-raised-button color="primary">Primary</button>
+</div>

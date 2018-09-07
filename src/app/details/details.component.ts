@@ -14,6 +14,8 @@ export class DetailsComponent implements OnInit {
 toppings = new FormControl();
 toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
+selectedValue: string[];
+
 user$: Object;
   constructor(private route:ActivatedRoute, private data:DataService) {
     this.route.params.subscribe( params => this.user$ = params.id);

@@ -8,13 +8,21 @@ import { Observable } from 'rxjs';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts$:Object;
-  constructor(private data:DataService) { }
+  //selected= {Chassis:[],processor:[],RAID:[]};
+  selected = {}
+  Object.keys(this.specification$).forEach(function(key) {
+    this.selected[key] = [];
+  })
+  specification$:Object;
+  constructor(private data:DataService) {
+  }
 
   ngOnInit() {
     this.data.getPosts().subscribe(
-      data => this.posts$=data
+      data => this.specification$=data
     );
+  //  console.log(selected)
+
   }
 
 }
