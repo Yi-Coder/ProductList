@@ -2,7 +2,7 @@ import { _ } from 'underscore';
 
 export class Utils {
 
- static _cartesianProductOf(args:Obejct) {
+ static _cartesianProductOf(args:Object) {
     if (arguments.length>1) args=_.toArray(arguments);
 
     // strings to arrays of letters
@@ -22,7 +22,8 @@ static  _cartesianProductObj(optObj:Object){
     var opts = _.values(optObj);
     var combs = this._cartesianProductOf(opts);
     return _.map(combs,function(comb){
-        return _.object(keys,comb);
+        //return _.object(keys,comb);
+        return comb;
     });
 }
 

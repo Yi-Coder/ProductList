@@ -2,10 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
+
+export class Item {
+    Chassis: string;
+    Processor: string;
+    RAID: string;
+    PSU: string;
+    Memeory: string;
+    Rails:string;
+    HardDrive:string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  _itemList: Item[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -31,4 +43,25 @@ export class DataService {
     return of(specification)
     //return this.http.get('https://jsonplaceholder.typicode.com/posts');
   }
+
+
+  addContact(it: Item) {
+    //it.ID= this._contactList.length + 1;
+    this._itemList.push(it);
+  }
+
+  editContact(it: Item) {
+    //const index = this._contactList.findIndex(c => c.ID === contact.ID);
+    this._itemList[0] = it;
+  }
+
+  deleteContact(id: number) {
+    //const item = this._contactList.findIndex(c => c.ID === id);
+    //this._itemList.splice(contact, 1);
+  }
+
+  getAllContacts() {
+    return this._itemList;
+  }
+
 }

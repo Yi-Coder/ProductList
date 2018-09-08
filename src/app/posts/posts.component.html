@@ -1,23 +1,29 @@
-<h1>Configuration</h1>
-<ul>
-  <li *ngFor="let spec of specification$ | keyvalue">
-    <p>{{spec.key}}</p>
-    <div>
-      <mat-form-field>
-        <mat-select placeholder= {{spec.key}} [(ngModel)]="selected[spec.key]" multiple>
-          <mat-option *ngFor="let choices of spec.value" [value]="choices">{{choices}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <p>selected {{spec.key}} : {{selected[spec.key]}}</p>
-  </li>
-</ul>
- <!--
- <ul>
-  <li *ngFor ="let item of generatedItems" >{{item}}</li>
-</ul>
-
--->
 <div>
- <button mat-raised-button color="primary"  (click)="ItemsList()">Submit</button>
+  <h1>Configuration</h1>
+  <ul>
+    <li *ngFor="let spec of specification$ | keyvalue">
+      <p>{{spec.key}}</p>
+      <div>
+        <mat-form-field>
+          <mat-select placeholder= {{spec.key}} [(ngModel)]="selected[spec.key]" multiple>
+            <mat-option *ngFor="let choices of spec.value" [value]="choices">{{choices}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <p>selected {{spec.key}} : {{selected[spec.key]}}</p>
+    </li>
+    <div>
+     <button mat-raised-button color="primary"  (click)="ItemsList()">Submit</button>
+    </div>
+  </ul>
+
+
+   <ul>
+    <li *ngFor ="let item of generatedItems | keyvalue" >
+      <tr>
+        {{item.value}}
+      </tr>
+    </li>
+  </ul>
+
 </div>
