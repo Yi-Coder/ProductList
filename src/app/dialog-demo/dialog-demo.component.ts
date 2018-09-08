@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-dialog-demo',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogDemoComponent implements OnInit {
 
-  constructor() { }
+    itemsToSubmit:Object;
+
+  constructor(
+  public dialogRef: MatDialogRef<DialogDemoComponent>,
+  @Inject(MAT_DIALOG_DATA) public data: Object) {}
 
   ngOnInit() {
+    this.itemsToSubmit = this.data;
   }
+
+onNoClick(): void {
+  this.dialogRef.close();
+}
+
 
 }

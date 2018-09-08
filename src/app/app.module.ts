@@ -92,8 +92,7 @@ import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-  ],
-  declarations: [DialogDemoComponent]
+  ]
 })
 export class MaterialModule {}
 
@@ -103,7 +102,8 @@ export class MaterialModule {}
     SidebarComponent,
     PostsComponent,
     UsersComponent,
-    DetailsComponent
+    DetailsComponent,
+    DialogDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -115,6 +115,7 @@ export class MaterialModule {}
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogDemoComponent]
 })
 export class AppModule { }

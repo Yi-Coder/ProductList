@@ -3,7 +3,6 @@ import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import {Utils} from '../Utils';
 import { _ } from 'underscore';
-
 import{MatDialog} from '@angular/material';
 import {DialogDemoComponent} from '../dialog-demo/dialog-demo.component';
 
@@ -14,13 +13,12 @@ import {DialogDemoComponent} from '../dialog-demo/dialog-demo.component';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-
   selected = {};
   generatedItems = [];
   specification$ : Object;
   displayedColumns: {};
 
-  constructor(public dialog: MatDialog, public data:DataService) {
+  constructor(private dialog: MatDialog, public data:DataService) {
 
   }
 
@@ -31,8 +29,7 @@ export class PostsComponent implements OnInit {
         Object.keys(this.specification$).forEach(function(key){
             this.selected[key] = []
           });
-
-          console.log(this.specification$);
+        //  console.log(this.specification$);
       })
     };
 
@@ -42,14 +39,10 @@ export class PostsComponent implements OnInit {
     this.generatedItems = Utils._cartesianProductObj(this.selected);
     this.displayedColumns = Object.keys(this.specification$);
     //console.log(this.displayedColumns);
-    //console.log(this.generatedItems);
+    console.log(this.generatedItems);
     const dialogRef = this.dialog.open(DialogDemoComponent, {
-      data: {}
+      data: this.generatedItems
    });
-
  }
-
-
-
 
 }

@@ -22,8 +22,8 @@ static  _cartesianProductObj(optObj:Object){
     var opts = _.values(optObj);
     var combs = this._cartesianProductOf(opts);
     return _.map(combs,function(comb){
-        //return _.object(keys,comb);
-        return comb;
+        return _.object(keys,comb);
+        //return comb;
     });
 }
 
