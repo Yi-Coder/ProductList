@@ -16,6 +16,7 @@ export class DialogDemoComponent implements OnInit {
 
   ngOnInit() {
     this.itemsToSubmit = this.data;
+    console.log("看看数据: ",JSON.stringify(this.itemsToSubmit, undefined, 2));
   }
 
 onNoClick(): void {

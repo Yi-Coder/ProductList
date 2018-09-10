@@ -1,6 +1,32 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <div style="text-align:center">
-  <p>
-    dialog-demo works!
-  </p>
-  <p>{{itemsToSubmit}}</p>
+  <!-- <p>{{itemsToSubmit}}</p> -->
+  <div class="container">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Chassis</th>
+          <th>HardDrive</th>
+          <th>Memeory</th>
+          <th>PSU</th>
+          <th>Processor</th>
+          <th>RAID</th>
+          <th>Rails</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of itemsToSubmit">
+          <td>{{item.Chassis}}</td>
+          <td>{{item.HardDrive}}</td>
+          <td>{{item.Memeory}}</td>
+          <td>{{item.PSU}}</td>
+          <td>{{item.Processor}}</td>
+          <td>{{item.RAID}}</td>
+          <td>{{item.Rails}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
