@@ -52,6 +52,7 @@ import { PostsComponent } from './posts/posts.component';
 import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
+import { DialogTableComponent } from './dialog-table/dialog-table.component';
 
 @NgModule({
   exports: [
@@ -92,7 +93,8 @@ import { DialogDemoComponent } from './dialog-demo/dialog-demo.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-  ]
+  ],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule]
 })
 export class MaterialModule {}
 
@@ -103,7 +105,8 @@ export class MaterialModule {}
     PostsComponent,
     UsersComponent,
     DetailsComponent,
-    DialogDemoComponent
+    DialogDemoComponent,
+    DialogTableComponent,
   ],
   imports: [
     BrowserModule,

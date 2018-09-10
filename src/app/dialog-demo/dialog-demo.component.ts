@@ -1,6 +1,6 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
-
+import { DialogTableComponent } from '../dialog-table/dialog-table.component';
 @Component({
   selector: 'app-dialog-demo',
   templateUrl: './dialog-demo.component.html',
