@@ -14,7 +14,7 @@ import {DialogDemoComponent} from '../dialog-demo/dialog-demo.component';
 })
 export class PostsComponent implements OnInit {
   selected = {};
-  generatedItems = [];
+  generatedItems = Object;
   specification$ : Object;
   displayedColumns: {};
 
@@ -26,22 +26,22 @@ export class PostsComponent implements OnInit {
       this.data.getPosts().subscribe(
       data => {
         this.specification$=data;
-        Object.keys(this.specification$).forEach(function(key){
-            this.selected[key] = []
-          });
+      //  Object.keys(this.specification$).forEach(function(key){
+        //    this.selected[key] = []
+        //  });
         //  console.log(this.specification$);
       })
     };
 
 
-
   ItemsList() {
-    this.generatedItems = Utils._cartesianProductObj(this.selected);
-    this.displayedColumns = Object.keys(this.specification$);
+  this.generatedItems = Utils._cartesianProductObj(this.selected
+    //  this.generatedItems = Utils.objectProduct(this.selected);
+    //this.displayedColumns = Object.keys(this.specification$);
     //console.log(this.displayedColumns);
-    console.log(this.generatedItems);
+    //console.log(this.generatedItems);
     const dialogRef = this.dialog.open(DialogDemoComponent, {
-      data: this.generatedItems
+      data: this.generatedItems;
    });
  }
 

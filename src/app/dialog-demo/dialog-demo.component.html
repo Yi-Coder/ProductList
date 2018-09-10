@@ -1,6 +1,54 @@
-<div style="text-align:center">
   <p>
     dialog-demo works!
   </p>
-  <p>{{itemsToSubmit}}</p>
-</div>
+
+  <table mat-table [dataSource]="itemsToSubmit" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Chassis">
+      <th mat-header-cell *matHeaderCellDef> Chassis </th>
+      <td mat-cell *matCellDef="let element"> {{element.Chassis}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Processor">
+      <th mat-header-cell *matHeaderCellDef> Processor </th>
+      <td mat-cell *matCellDef="let element"> {{element.Processor}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="RAID">
+      <th mat-header-cell *matHeaderCellDef> RAID </th>
+      <td mat-cell *matCellDef="let element"> {{element.RAID}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="PSU">
+      <th mat-header-cell *matHeaderCellDef> PSU </th>
+      <td mat-cell *matCellDef="let element"> {{element.PSU}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Memeory">
+      <th mat-header-cell *matHeaderCellDef> Memeory </th>
+      <td mat-cell *matCellDef="let element"> {{element.Memeory}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Rails">
+      <th mat-header-cell *matHeaderCellDef> Symbol </th>
+      <td mat-cell *matCellDef="let element"> {{element.Rails}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="HardDrive">
+      <th mat-header-cell *matHeaderCellDef> HardDrive </th>
+      <td mat-cell *matCellDef="let element"> {{element.HardDrive}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
