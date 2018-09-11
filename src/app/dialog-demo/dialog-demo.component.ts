@@ -1,8 +1,9 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit,Inject, ViewChild } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import { _ } from 'underscore';
-import {MatTableDataSource} from '@angular/material';
+import {MatTableDataSource, MatPaginator} from '@angular/material';
 import {PageEvent} from '@angular/material';
+
 
 export interface Item {
     Chassis: string;
@@ -25,7 +26,8 @@ export class DialogDemoComponent implements OnInit {
 
   displayedColumns: string[] = ['Chassis', 'Processor', 'RAID', 'PSU','Memeory','Rails','HardDrive'];
   itemsToSubmit: Item;
-
+  dataSource = new MatTableDataSource<Item>(this.data);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   //columnsToDisplay:Object;
 
   constructor(
@@ -38,6 +40,7 @@ export class DialogDemoComponent implements OnInit {
   ngOnInit() {
 
     this.itemsToSubmit  = this.data;
+    this.dataSource.paginator = this.paginator;
     //console.log(this.dataSource);
     //console.log (_.keys(this.dataSource));
     console.log (this.itemsToSubmit);
