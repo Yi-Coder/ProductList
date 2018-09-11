@@ -45,6 +45,11 @@ export class PostsComponent implements OnInit {
       height: '600px',
       width: '800px'
    });
+
+   dialogRef.afterClosed().subscribe(result => {
+   console.log('The dialog was closed');
+   //this.animal = result;
+ });
  }
 
 }
