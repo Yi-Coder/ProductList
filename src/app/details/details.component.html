@@ -1,15 +1,1 @@
-<h1>{{ user$.name }}</h1>
 
-<ul>
-  <li><strong>Username:</strong> {{ user$.username }}</li>
-  <li><strong>Email:</strong> {{ user$.email }}</li>
-  <li><strong>Phone:</strong> {{ user$.phone }}</li>
-</ul>
-
-<mat-form-field>
-  <mat-select placeholder="Toppings" [(ngModel)]="selectedValue" [formControl]="toppings" multiple>
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-  </mat-select>
-</mat-form-field>
-
- <p> Selected value: {{selectedValue}} </p>
