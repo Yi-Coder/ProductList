@@ -35,13 +35,15 @@ export class PostsComponent implements OnInit {
 
 
   ItemsList() {
-  this.generatedItems = Utils._cartesianProductObj(this.selected
+  this.generatedItems = Utils._cartesianProductObj(this.selected)
     //  this.generatedItems = Utils.objectProduct(this.selected);
     //this.displayedColumns = Object.keys(this.specification$);
     //console.log(this.displayedColumns);
     //console.log(this.generatedItems);
     const dialogRef = this.dialog.open(DialogDemoComponent, {
-      data: this.generatedItems;
+      data: this.generatedItems,
+      height: '600px',
+      width: '800px'
    });
  }
 

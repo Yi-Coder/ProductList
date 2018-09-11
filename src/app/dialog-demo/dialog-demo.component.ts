@@ -2,6 +2,7 @@ import { Component, OnInit,Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import { _ } from 'underscore';
 import {MatTableDataSource} from '@angular/material';
+import {PageEvent} from '@angular/material';
 
 export interface Item {
     Chassis: string;
@@ -23,14 +24,13 @@ export interface Item {
 export class DialogDemoComponent implements OnInit {
 
   displayedColumns: string[] = ['Chassis', 'Processor', 'RAID', 'PSU','Memeory','Rails','HardDrive'];
-  dataSource: item [];
-  itemsToSubmit: item [];
+  itemsToSubmit: Item;
 
   //columnsToDisplay:Object;
 
   constructor(
   public dialogRef: MatDialogRef<DialogDemoComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: Object) {
+  @Inject(MAT_DIALOG_DATA) public data: any) {
 
 
   }
@@ -49,4 +49,18 @@ onNoClick(): void {
 }
 
 
+}
+
+export class PaginatorConfigurableExample {
+  // MatPaginator Inputs
+  length = 100;
+  pageSize = 10;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  }
 }

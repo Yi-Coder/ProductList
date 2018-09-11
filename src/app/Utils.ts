@@ -29,7 +29,7 @@ static  _cartesianProductObj(optObj:Object){
     });
 }
 
-static product(args:Object) {
+static product(args:any) {
     if(!args.length)
         return [[]];
     var prod = this.product(args.slice(1)), r = [];
