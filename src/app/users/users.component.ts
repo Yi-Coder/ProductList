@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
+  
   users$: Object;
   
   constructor(private data: DataService) { }

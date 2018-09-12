@@ -1,7 +1,21 @@
-<h1>{{ user$.name }}</h1>
-
-<ul>
-  <li><strong>Username:</strong> {{ user$.username }}</li>
-  <li><strong>Email:</strong> {{ user$.email }}</li>
-  <li><strong>Phone:</strong> {{ user$.phone }}</li>
-</ul>
+<div>
+    <h1>Configuration</h1>
+    <ul>
+      <li *ngFor="let spec of specification$ | keyvalue">
+        <p>{{spec.key}}</p>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder= {{spec.key}} [(ngModel)]="selected[spec.key]" multiple>
+              <mat-option *ngFor="let choices of spec.value" [value]="choices">{{choices}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </li>
+    </ul>
+  
+    <div>
+     <button mat-raised-button color="primary"  (click)="ItemsList()">Submit</button>
+    </div>
+  
+  </div>
+  
