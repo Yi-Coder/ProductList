@@ -35,6 +35,8 @@ export class PostsComponent implements OnInit {
 
 
   ItemsList() {
+  this.selected['Chassis'] = Array(this.selected['Chassis'])
+  console.log(this.selected);
   this.generatedItems = Utils._cartesianProductObj(this.selected)
     //  this.generatedItems = Utils.objectProduct(this.selected);
     //this.displayedColumns = Object.keys(this.specification$);

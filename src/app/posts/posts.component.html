@@ -1,7 +1,18 @@
 <div>
   <h1>Configuration</h1>
   <ul>
-    <li *ngFor="let spec of specification$ | keyvalue">
+    <li *ngFor="let spec of specification$  | keyvalue | slice:0:1">
+        <p>{{spec.key}}</p>
+        <div>
+          <mat-form-field>
+            <mat-select placeholder= {{spec.key}} [(ngModel)]="selected[spec.key]">
+              <mat-option *ngFor="let choices of spec.value" [value]="choices">{{choices || json}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    </li>
+
+    <li *ngFor="let spec of specification$ | keyvalue | slice:1">
       <p>{{spec.key}}</p>
       <div>
         <mat-form-field>
